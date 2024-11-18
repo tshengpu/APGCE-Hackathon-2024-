@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Recognition</title>
+</head>
+<body>
+    <h1>Upload an Image for Recognition</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if filename %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" style="max-width:300px;">
+        <h2>Prediction Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
