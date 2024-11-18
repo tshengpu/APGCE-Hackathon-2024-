@@ -35,6 +35,8 @@ Full info:
 [Challenge Briefing](/starter_pack/GeoHackathon%202024%20Challenge%20Brief.pdf)
 
 # Our Approach (Challenge 1: Seismic Fault Prediction)
+## Full PPT slides: [Slides](/DSGS_101.pdf)
+Note: Source codes are zipped and the full seismic file and models are not being copy over due to too large file. 
 
 ![Alt text](archive/Methodology.JPG "Title")
 
