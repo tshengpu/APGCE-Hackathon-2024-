@@ -69,7 +69,7 @@ Right = Sample prediction on validation dataset  <br>
 
 ## Model file generation
 Open a terminal/cmd, change directory to the repository folder, and run the following command to generate the model file into staging folder.
-`cat model/linux-splitted-model/model* > staging/model.pt`
+`cat model/splitted-model/model* > staging/model.pt`
 
 # Sponsors: 
 ![alt text](archive/WhatsApp%20Image%202024-11-17%20at%2008.25.54.jpeg)
