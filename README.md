@@ -1,24 +1,21 @@
-# APGCE-Hackathon-2024
+# APGCE-Hackathon-2024 - Seismic Fault Image Segmentation
+
+![Alt text](/img/final_output.png)
+
+
+
 Date: 16-18 Nov 2024  <br>
 Location: Common Ground Bukit Bintang, KL <br>
 Orgainized by: 
 - Asia Petroleum GeoScience Conference & Exhibition 
 - Petronas 
 
-![alt text](archive/schedule.png)
+![alt text](/img/schedule.png)
 
-## Introduction
-### Team name: DSGS101
+# Meet the Team
 
-|Team Member Name| Role in Industry | 
-| -------------- | ----- |
-| Lim Chun Yan | Reservoir Engineer |
-| Zulfadhi Mohd Zaki | Geoscientist |
-| Teo Sheng Pu | Data Engineer |
-| Max Wei Xiang Ooi | Data Scientist |
-| Izzudin Hussein | Data Scientist |
-
-![Alt text](img/3.team5.jpeg)
+![Alt text](/img/3.team5.jpeg)
+From left to right: Izzudin Hussein (Data Scientist), Lim Chun Yan (Reservoir Engineer), Max Wei Xiang Ooi (Data Scientist), Teo Sheng Pu (Data Engineer), Zulfadhi Mohd Zaki (Geoscientist)
 
 # Challenge Background 
 Faults are cracks within the Earth's crust that may help provide conduits for hydrocarbon migration into a trap or stop hydrocarbon on its migration path. Horizons are distinct rock layers that represent different periods of deposition and help geologists track how hydrocarbons move through the subsurface. Understanding these faults are crucial for geologists in the oil and gas exploration.
@@ -32,13 +29,11 @@ In 3D seismic, faults are relatively easier to interpret compared to 2D seismic 
 At the end of the 48 hours, you are given 10 minutes to present your solution to the judges. The final product will then be uploaded to and made available in a public repository. 
 
 Full info: 
-[Challenge Briefing](/starter_pack/GeoHackathon%202024%20Challenge%20Brief.pdf)
 
-# Our Approach (Challenge 1: Seismic Fault Prediction)
-## Full PPT slides: [Slides](/DSGS_101.pdf)
-Note: Source codes are zipped and the full seismic file and models are not being copy over due to too large file. 
 
-![Alt text](archive/Methodology.JPG "Title")
+# Our Approach
+
+![Alt text](/img/Methodology.JPG "Title")
 
 | Challenges | Steps  |
 | ---------- | -----  |
@@ -49,27 +44,42 @@ Note: Source codes are zipped and the full seismic file and models are not being
 | Lost of direction and motivation after long working hours | 1. Peer motivation <br> 2. Pair mentoring <br> 3. Pair programming |
 
 ## Image enhancement to highlight contours 
-![alt text](archive/image%20enhancement.png)
+![alt text](/img/image%20enhancement.png)
 
 ## Fault Thickening to address sparse target data and improve learning
-![alt text](archive/fault%20thickening.png)
+![alt text](/img/fault%20thickening.png)
 
-## Our Results
-![alt text](archive/training%20results.png)
+## Image Cropping
+Models are trained using samples of the whole images of fixed dimention (512x512). When a full scale image is passed into the model wrapper, it is right and bottom padded, and then split into grids of the same dimension. Each grid is predicted independently, and the final predictions are combined to give an overall mask.
+
+# Results
+![alt text](/img/training%20results.png)
 Left = Enhanced Focal loss function  <br>
-Middle = Weighted F1 Score Accuracy <br>
+Middle = Weighted F1 Score <br>
 Right = Sample prediction on validation dataset  <br>
 
 ## Validation on holdout data
-![alt text](archive/holdout_data.png)
+![alt text](/img/holdout_data.png)
 - Looks like more training are required 
 - Looks like we have too much penalty on the fault (0.1 for background, 0.9 for fault)
 
-# Execution guide
+# How to use
 
-## Model file generation
+### Basic Execution
 Open a terminal/cmd, change directory to the repository folder, and run the following command to generate the model file into staging folder.
 `cat model/splitted-model/model* > staging/model.pt`
 
-# Sponsors: 
-![alt text](archive/WhatsApp%20Image%202024-11-17%20at%2008.25.54.jpeg)
+Edit the file path within staging/wrapper.py, and execute in terminal/cmd. If successful, the output image will be produced in the staging folder.
+
+### Data Preparation
+A small dataset of 10 images are included in data/raw_XXX folders. Preparation steps and visualization are available in data_prep folder.
+
+### Modeling
+Modeling folder contains the code to train and evaluate a model.
+
+# Resources
+1. [Final presentation](/doc/DSGS_101.pdf)
+2. [Challenge briefing](/doc/GeoHackathon%202024%20Challenge%20Brief.pdf)
+
+# Sponsors
+![alt text](img/sponsors.jpeg)

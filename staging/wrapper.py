@@ -34,7 +34,7 @@ from dataloader import ThresholdTransform
 from config import DataProcessingConfig
 
 class Group4ModelWrapper:
-    def __init__(self, filename, model = "../shared/models/cracknet cutoff focal loss revised w augmentation part 3.pt.pt"):
+    def __init__(self, filename, model = "model.pt"):
         self.filename = filename
         self.DEVICE = "cpu"
         self.model = torch.load(model, weights_only=False)
