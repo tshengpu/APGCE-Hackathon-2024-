@@ -18,7 +18,7 @@ Orgainized by:
 | Max Wei Xiang Ooi | Data Scientist |
 | Izzudin Hussein | Data Scientist |
 
-![Alt text](team_photo/WhatsApp%20Image%202024-11-18%20at%2015.21.49.jpeg "Title")
+![Alt text](img/3.team5.jpeg)
 
 # Challenge Background 
 Faults are cracks within the Earth's crust that may help provide conduits for hydrocarbon migration into a trap or stop hydrocarbon on its migration path. Horizons are distinct rock layers that represent different periods of deposition and help geologists track how hydrocarbons move through the subsurface. Understanding these faults are crucial for geologists in the oil and gas exploration.
