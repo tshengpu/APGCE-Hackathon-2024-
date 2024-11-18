@@ -1,39 +1,16 @@
 # APGCE-Hackathon-2024 - Seismic Fault Image Segmentation
 
-![Alt text](/img/final_output.png)
+![Background](/img/final_output.png)
 
 
+# Background 
+Faults are cracks within the Earth's crust that may help provide conduits for hydrocarbon migration into a trap or stop hydrocarbon on its migration path. Understanding these faults are crucial for geologists in the oil and gas exploration. The challenge is to build and train a computer vision model that can <b> predict the propagation of faults </b> across a given 2D seismic dataset.
 
-Date: 16-18 Nov 2024  <br>
-Location: Common Ground Bukit Bintang, KL <br>
-Orgainized by: 
-- Asia Petroleum GeoScience Conference & Exhibition 
-- Petronas 
-
-![alt text](/img/schedule.png)
-
-# Meet the Team
-
-![Alt text](/img/3.team5.jpeg)
-From left to right: Izzudin Hussein (Data Scientist), Lim Chun Yan (Reservoir Engineer), Max Wei Xiang Ooi (Data Scientist), Teo Sheng Pu (Data Engineer), Zulfadhi Mohd Zaki (Geoscientist)
-
-# Challenge Background 
-Faults are cracks within the Earth's crust that may help provide conduits for hydrocarbon migration into a trap or stop hydrocarbon on its migration path. Horizons are distinct rock layers that represent different periods of deposition and help geologists track how hydrocarbons move through the subsurface. Understanding these faults are crucial for geologists in the oil and gas exploration.
-
-In 3D seismic, faults are relatively easier to interpret compared to 2D seismic due to data continuity across an area of interest. Similarly, horizons are more confidently tracked in 3D seismic as the continuous data allows geologists to follow the same geological layer across the volume. For examples, in a producing field or exploration in a mature basin. In frontier exploration, geologists oftentimes are constrained with only 2D seismic in the form of discrete lines (inline and crossline).
-
-<b>Challenge 1</b>: build and train a computer vision model that can <b> predict the propagation of faults </b> across a given 2D seismic dataset.
-
-<b>Challenge 2</b>: build and train a computer vision model that can <b> predict the propagation of horizons </b> across a given 2D seismic dataset.
-
-At the end of the 48 hours, you are given 10 minutes to present your solution to the judges. The final product will then be uploaded to and made available in a public repository. 
-
-Full info: 
-
+At the end of the 48 hours, we are given 10 minutes to present our solution to the judges.
 
 # Our Approach
 
-![Alt text](/img/Methodology.JPG "Title")
+![Method](/img/Methodology.JPG)
 
 | Challenges | Steps  |
 | ---------- | -----  |
@@ -44,22 +21,22 @@ Full info:
 | Lost of direction and motivation after long working hours | 1. Peer motivation <br> 2. Pair mentoring <br> 3. Pair programming |
 
 ## Image enhancement to highlight contours 
-![alt text](/img/image%20enhancement.png)
+![enhancement](/img/image%20enhancement.png)
 
 ## Fault Thickening to address sparse target data and improve learning
-![alt text](/img/fault%20thickening.png)
+![thickening](/img/fault%20thickening.png)
 
 ## Image Cropping
-Models are trained using samples of the whole images of fixed dimention (512x512). When a full scale image is passed into the model wrapper, it is right and bottom padded, and then split into grids of the same dimension. Each grid is predicted independently, and the final predictions are combined to give an overall mask.
+Models are trained using random 512x512 samples of whole images. When a full scale image is passed into the model wrapper, it is right and bottom padded, and then split into grids of 512x512 dimension. Each grid is predicted independently by the model, and the individual predictions are combined to give a final overall prediction.
 
 # Results
-![alt text](/img/training%20results.png)
+![results](/img/training%20results.png)
 Left = Enhanced Focal loss function  <br>
 Middle = Weighted F1 Score <br>
 Right = Sample prediction on validation dataset  <br>
 
-## Validation on holdout data
-![alt text](/img/holdout_data.png)
+## Validation on Holdout Data
+![holdout](/img/holdout_data.png)
 - Looks like more training are required 
 - Looks like we have too much penalty on the fault (0.1 for background, 0.9 for fault)
 
@@ -77,9 +54,18 @@ A small dataset of 10 images are included in data/raw_XXX folders. Preparation s
 ### Modeling
 Modeling folder contains the code to train and evaluate a model.
 
+# Meet the Team
+
+![team](/img/team5.jpeg) <br>
+From left to right: Izzudin Hussein (Data Scientist), Lim Chun Yan (Reservoir Engineer), Max Ooi Wei Xiang (Data Scientist), Teo Sheng Pu (Data Engineer), Zulfadhi Mohd Zaki (Geoscientist)
+
+# Event Information
+Date: 16-18 Nov 2024  <br>
+Location: Common Ground Bukit Bintang, KL <br>
+Orgainized by: 
+- Asia Petroleum GeoScience Conference & Exhibition 
+- Petronas 
+
 # Resources
 1. [Final presentation](/doc/DSGS_101.pdf)
 2. [Challenge briefing](/doc/GeoHackathon%202024%20Challenge%20Brief.pdf)
-
-# Sponsors
-![alt text](img/sponsors.jpeg)
