@@ -1,4 +1,11 @@
 # APGCE-Hackathon-2024
+Date: 16-18 Nov 2024  <br>
+Location: Common Ground Bukit Bintang, KL <br>
+Orgainized by: 
+- Asia Petroleum GeoScience Conference & Exhibition 
+- Petronas 
+
+![alt text](archive/schedule.png)
 
 ## Introduction
 ### Team name: DSGS101
@@ -55,3 +62,7 @@ Right = Sample prediction on validation dataset  <br>
 ![alt text](archive/holdout_data.png)
 - Looks like more training are required 
 - Looks like we have too much penalty on the fault (0.1 for background, 0.9 for fault)
+
+
+# Sponsors: 
+![alt text](archive/WhatsApp%20Image%202024-11-17%20at%2008.25.54.jpeg)
